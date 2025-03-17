@@ -1,0 +1,23 @@
+workflows:
+  flutter-workflow:
+    name: Flutter Build Workflow
+    platform: flutter
+    trigger:
+      branches:
+        - main
+    jobs:
+      - name: Instalar dependências
+        scripts:
+          - flutter pub get
+
+      - name: Construir APK para Android
+        scripts:
+          - flutter build apk --release
+
+      - name: Construir iOS
+        scripts:
+          - flutter build ios --release
+
+      - name: Executar testes
+        scripts:
+          - flutter test
