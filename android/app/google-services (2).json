@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "822862943283",
+    "project_id": "dr-connect-bbe41",
+    "storage_bucket": "dr-connect-bbe41.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822862943283:android:e2b5d8891a0efc4362bf46",
+        "android_client_info": {
+          "package_name": "com.ejemplo.dr_connect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmnbUrTuqa8yp7UJqDXlPBPZITMI3mdlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
