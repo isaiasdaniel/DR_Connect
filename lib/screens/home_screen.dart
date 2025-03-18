@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart'; // Para usar Firestore
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -21,6 +22,19 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  // Método para obtener los posts de Firestore
+  Stream<List<Map<String, dynamic>>> _getPosts() {
+    return FirebaseFirestore.instance
+        .collection('posts') // La colección en Firestore
+        .snapshots()
+        .map((snapshot) => snapshot.docs
+            .map((doc) => {
+                  'title': doc['title'], // Asegúrate de que 'title' esté en los documentos
+                  'image': doc['image'], // Asegúrate de que 'image' esté en los documentos
+                })
+            .toList());
   }
 
   @override
@@ -60,6 +74,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   );
                 }).toList(),
+              ),
+              
+              // Mostrar los posts de Firestore
+              StreamBuilder<List<Map<String, dynamic>>>(
+                stream: _getPosts(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                  if (snapshot.hasError) {
+                    return Center(child: Text('Error: ${snapshot.error}'));
+                  }
+                  if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                    return Center(child: Text('No posts available.'));
+                  }
+
+                  // Lista de posts
+                  var posts = snapshot.data!;
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: posts.length,
+                    itemBuilder: (context, index) {
+                      var post = posts[index];
+                      return ListTile(
+                        title: Text(post['title']),
+                        leading: Image.network(post['image']),
+                      );
+                    },
+                  );
+                },
               ),
             ]),
           ),

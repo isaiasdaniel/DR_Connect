@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'home.dart'; // Pantalla principal
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 void main() async {
@@ -18,12 +19,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: HomeScreen(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   final FirebaseAnalytics analytics = FirebaseAnalytics();
 
   @override
@@ -33,7 +34,7 @@ class MyHomePage extends StatelessWidget {
       name: 'page_view',
       parameters: <String, dynamic>{
         'page_title': 'Home',
-        'page_location': 'MyHomePage',
+        'page_location': 'HomeScreen',
       },
     );
 
