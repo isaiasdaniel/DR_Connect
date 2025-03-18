@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import 'package:cloud_firestore/cloud_firestore.dart'; // Para usar Firestore
+=======
+>>>>>>> 2dd519dd07c5558190c013aa35fe836d76d8cc32
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -24,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+<<<<<<< HEAD
   // Método para obtener los posts de Firestore
   Stream<List<Map<String, dynamic>>> _getPosts() {
     return FirebaseFirestore.instance
@@ -37,6 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
             .toList());
   }
 
+=======
+>>>>>>> 2dd519dd07c5558190c013aa35fe836d76d8cc32
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,6 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 }).toList(),
               ),
+<<<<<<< HEAD
               
               // Mostrar los posts de Firestore
               StreamBuilder<List<Map<String, dynamic>>>( 
@@ -105,6 +112,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
               ),
+=======
+>>>>>>> 2dd519dd07c5558190c013aa35fe836d76d8cc32
             ]),
           ),
         ],

@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "dr_connect_new_fresh",
     "short_name": "dr_connect_new_fresh",
+=======
+    "name": "dr_connect",
+    "short_name": "dr_connect",
+>>>>>>> 2dd519dd07c5558190c013aa35fe836d76d8cc32
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

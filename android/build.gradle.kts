@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 allprojects {
    buildscript {
     ext.kotlin_version = '1.9.0'
@@ -27,3 +28,19 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
+=======
+// Archivo android/build.gradle
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '8.2.2' apply false
+    id 'com.android.library' version '8.2.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
+    id("com.google.gms.google-services") version "4.4.2" apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+>>>>>>> 2dd519dd07c5558190c013aa35fe836d76d8cc32

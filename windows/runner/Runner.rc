@@ -90,12 +90,21 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
+<<<<<<< HEAD
             VALUE "FileDescription", "dr_connect_new_fresh" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "dr_connect_new_fresh" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "dr_connect_new_fresh.exe" "\0"
             VALUE "ProductName", "dr_connect_new_fresh" "\0"
+=======
+            VALUE "FileDescription", "dr_connect" "\0"
+            VALUE "FileVersion", VERSION_AS_STRING "\0"
+            VALUE "InternalName", "dr_connect" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "dr_connect.exe" "\0"
+            VALUE "ProductName", "dr_connect" "\0"
+>>>>>>> 2dd519dd07c5558190c013aa35fe836d76d8cc32
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

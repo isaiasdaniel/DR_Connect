@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
+<<<<<<< HEAD
         android:label="dr_connect_new_fresh"
+=======
+        android:label="dr_connect"
+>>>>>>> 2dd519dd07c5558190c013aa35fe836d76d8cc32
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

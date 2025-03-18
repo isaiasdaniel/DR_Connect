@@ -1,0 +1,16 @@
+version: 1.0
+
+workflows:
+  flutter-workflow:
+    name: Flutter Build Workflow
+    environment:
+      flutter: stable
+    scripts:
+      - name: Instalar dependências
+        script: flutter pub get
+      - name: Construir APK para Android
+        script: flutter build apk --release
+      - name: Construir iOS
+        script: flutter build ios --release
+      - name: Executar testes
+        script: flutter test
