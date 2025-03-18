@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               
               // Mostrar los posts de Firestore
-              StreamBuilder<List<Map<String, dynamic>>>(
+              StreamBuilder<List<Map<String, dynamic>>>( 
                 stream: _getPosts(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     return Center(child: Text('Error: ${snapshot.error}'));
                   }
                   if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                    return Center(child: Text('No posts available.'));
+                    return Center(child: Text('No hay posts disponibles.'));
                   }
 
                   // Lista de posts
