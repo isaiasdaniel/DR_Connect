@@ -1,12 +1,11 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
 android {
-    namespace = "com.example.dr_connect_new_fresh"
+    namespace = "com.dr.dr_connect_new_fresh"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -20,10 +19,8 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.dr_connect_new_fresh"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        // TODO: Especifica tu propio ID de aplicación único
+        applicationId = "com.dr.dr_connect_new_fresh"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -32,13 +29,23 @@ android {
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            // TODO: Agrega tu propia configuración de firma para la versión de producción
+            signingConfig signingConfigs.getByName("release") // Cambié de 'debug' a 'release'
+            minifyEnabled false  // Si usas Proguard o R8, habilita minifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
+signingConfigs {
+    release {
+        storeFile file("path/to/your/keystore.jks")  // Cambia esta ruta a tu archivo keystore
+        storePassword "your_keystore_password"  // Cambia con tu contraseña de keystore
+        keyAlias "your_key_alias"  // Cambia con tu alias de clave
+        keyPassword "your_key_password"  // Cambia con tu contraseña de clave
+    }
+}
+
 flutter {
-    source = "../.."
+    source = "../.."  // Ruta relativa de tu proyecto Flutter (si está en un directorio superior)
 }
