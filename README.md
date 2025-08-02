@@ -1,6 +1,6 @@
 # 💸 DR Finance
 
-**DR Finance** es una aplicación móvil simple, moderna y offline para el **control financiero familiar**. Diseñada especialmente para familias que desean organizar sus ingresos y gastos de forma fácil, sin necesidad de conexión a internet.
+**DR Connect** es una aplicación móvil simple, moderna y offline para el **control financiero familiar**. Diseñada especialmente para familias que desean organizar sus ingresos y gastos de forma fácil, sin necesidad de conexión a internet.
 
 ---
 
